@@ -36,6 +36,9 @@
 #include "generated_keymap.c"
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (!process_macro(keycode, record)) {
+        return false;
+    }
     if (record->event.pressed) {
         switch (keycode) {
         case VERSION:
