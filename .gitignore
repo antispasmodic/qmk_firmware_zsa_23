@@ -1,3 +1,7 @@
+.idea
+.venv
+venv
+
 # Junk files
 *.bak
 *.swp
