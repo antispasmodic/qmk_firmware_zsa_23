@@ -27,6 +27,10 @@
 #include "generated_key_overrides.c"
 #endif
 
+#ifdef RGB_MATRIX_CUSTOM_KB
+#include "generated_rgb_matrix.c"
+#include "static_rgb_matrix.c"
+#endif
 
 #include "generated_macros.c"
 #include "generated_keymap.c"
