@@ -1,0 +1,9 @@
+enum custom_keycodes {
+  CUSTOM_UNUSED = SAFE_RANGE,
+  VERSION,
+  LEFT_LEFT,
+  MEGA_COPY,
+  MEGA_PASTE,
+  QUESTION_BANG,
+  RIGHT_RIGHT,
+};
