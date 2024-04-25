@@ -21,7 +21,7 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 
-#include "generated_keycodes.c"
+#include "generated_custom_keycodes.c"
 
 #ifdef KEY_OVERRIDE_ENABLE
 #include "generated_key_overrides.c"
@@ -39,6 +39,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_macro(keycode, record)) {
         return false;
     }
+    /*
     if (record->event.pressed) {
         switch (keycode) {
         case VERSION:
@@ -46,5 +47,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         }
     }
+    */
     return true;
 }

@@ -11,7 +11,6 @@ void clear_all_the_mods(void) {
 }
 
 
-
 bool process_macro(uint16_t keycode, keyrecord_t *record) {
   const uint8_t mods = get_mods();
   const uint8_t oneshot_mods = get_oneshot_mods();

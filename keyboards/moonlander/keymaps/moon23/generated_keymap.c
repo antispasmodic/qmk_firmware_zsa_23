@@ -6,6 +6,7 @@ enum layers{
   LAYER_NAV,
   LAYER_MNAV,
   LAYER_GUI,
+  LAYER_BEN_SYM,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -14,15 +15,15 @@ KC_ESCAPE,              KC_F8,                  KC_F6,                  KC_F4,  
 C(KC_Z),                KC_Q,                   KC_W,                   KC_F,                   KC_P,                   KC_B,                   KC_AUDIO_VOL_UP,        KC_PRINT_SCREEN,        KC_J,                   KC_L,                   KC_U,                   KC_Y,                   KC_QUOTE,               TO(LAYER_BASE),         
 C(KC_X),                KC_A,                   MT(MOD_LALT, KC_R),     MT(MOD_LCTL, KC_S),     MT(MOD_LSFT, KC_T),     KC_G,                   KC_AUDIO_VOL_DOWN,      KC_AUDIO_MUTE,          KC_M,                   MT(MOD_RSFT, KC_N),     MT(MOD_RCTL, KC_E),     MT(MOD_RALT, KC_I),     KC_O,                   TO(LAYER_NUM),          
 MEGA_COPY,              KC_Z,                   KC_X,                   KC_C,                   KC_D,                   KC_V,                                                                   KC_K,                   KC_H,                   KC_COMMA,               KC_DOT,                 QUESTION_BANG,          TO(LAYER_NAV),          
-MEGA_PASTE,             KC_LEFT_GUI,            OSM(MOD_LALT),          OSM(MOD_LCTL),          OSM(MOD_LSFT),          LT(6, KC_SPACE),                                                        QK_CAPS_WORD_TOGGLE,    OSM(MOD_RSFT),          OSM(MOD_RCTL),          OSM(MOD_RALT),          KC_RIGHT_GUI,           TO(LAYER_MNAV),
-                                                                                                LT(1, KC_ENTER),        LT(2, KC_TAB),          LT(3, KC_DELETE),       KC_DELETE,              LT(4, KC_BACKSPACE),    LT(1, KC_SPACE)
+MEGA_PASTE,             KC_LEFT_GUI,            OSM(MOD_LALT),          OSM(MOD_LCTL),          OSM(MOD_LSFT),          LT(6, KC_SPACE),                                                        QK_CAPS_WORD_TOGGLE,    OSM(MOD_RSFT),          OSM(MOD_RCTL),          OSM(MOD_RALT),          KC_RIGHT_GUI,           TO(LAYER_MNAV),         
+                                                                                                LT(1, KC_ENTER),        LT(2, KC_TAB),          TO(LAYER_BEN_SYM),      KC_DELETE,              LT(4, KC_BACKSPACE),    LT(1, KC_SPACE)
 
 ),
 [LAYER_SYM] = LAYOUT_moonlander(
 KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_TRANSPARENT,         
 KC_TRANSPARENT,         KC_GRAVE,               KC_CIRCUMFLEX,          KC_DOLLAR,              KC_HASH,                KC_EXCLAIM,             KC_NO,                  KC_NO,                  KC_NO,                  KC_BACKSLASH,           KC_SLASH,               KC_PIPE,                KC_NO,                  TO(LAYER_BASE),         
-KC_TRANSPARENT,         KC_QUOTE,               KC_LEFT_ANGLE_BRACKET,  KC_LEFT_CURLY_BRACE,    KC_LEFT_PAREN,          KC_LEFT_BRACKET,        KC_NO,                  KC_NO,                  KC_COLON,               KC_PLUS,                KC_EQUAL,               KC_ASTERISK,            KC_AMPERSAND,           TO(LAYER_NUM),          
-KC_TRANSPARENT,         KC_DOUBLE_QUOTE,        KC_RIGHT_ANGLE_BRACKET, KC_RIGHT_CURLY_BRACE,   KC_RIGHT_PAREN,         KC_RIGHT_BRACKET,                                                       KC_AT,                  KC_UNDERSCORE,          KC_MINUS,               KC_TILDE,               KC_PERCENT,             TO(LAYER_NAV),          
+KC_TRANSPARENT,         KC_QUOTE,               KC_LEFT_ANGLE_BRACKET,  KC_LEFT_PAREN,          KC_LEFT_CURLY_BRACE,    KC_LEFT_BRACKET,        KC_NO,                  KC_NO,                  KC_COLON,               KC_PLUS,                KC_EQUAL,               KC_ASTERISK,            KC_AMPERSAND,           TO(LAYER_NUM),          
+KC_TRANSPARENT,         KC_DOUBLE_QUOTE,        KC_RIGHT_ANGLE_BRACKET, KC_RIGHT_PAREN,         KC_RIGHT_CURLY_BRACE,   KC_RIGHT_BRACKET,                                                       KC_AT,                  KC_UNDERSCORE,          KC_MINUS,               KC_TILDE,               KC_PERCENT,             TO(LAYER_NAV),          
 KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_NO,                                                                  KC_NO,                  KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         TO(LAYER_MNAV),         
                                                                                                 KC_TRANSPARENT,         KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_TRANSPARENT
 
@@ -69,6 +70,15 @@ KC_TRANSPARENT,         KC_NO,                  S(G(KC_LEFT)),          G(KC_UP)
 KC_TRANSPARENT,         KC_NO,                  G(KC_LEFT),             G(KC_DOWN),             G(KC_RIGHT),            KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_NO,                  TO(LAYER_NUM),          
 KC_TRANSPARENT,         KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                                                                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  TO(LAYER_NAV),          
 KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,                                                         KC_NO,                  KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         TO(LAYER_MNAV),         
+                                                                                                KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO
+
+),
+[LAYER_BEN_SYM] = LAYOUT_moonlander(
+KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_TRANSPARENT,         
+KC_TRANSPARENT,         KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  TO(LAYER_BASE),         
+KC_TRANSPARENT,         KC_NO,                  KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_NO,                  TO(LAYER_NUM),          
+KC_TRANSPARENT,         KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                                                                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  TO(LAYER_NAV),          
+KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_NO,                                                                  KC_NO,                  KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         KC_TRANSPARENT,         TO(LAYER_MNAV),         
                                                                                                 KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO
 
 ),
